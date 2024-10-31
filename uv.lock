@@ -244,6 +244,18 @@ wheels = [
 ]
 
 [[package]]
+name = "django-health-check"
+version = "3.18.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/66/e9/0699ea3debfda75e5960ff99f56974136380e6f8202d453de7357e1f67fc/django_health_check-3.18.3.tar.gz", hash = "sha256:18b75daca4551c69a43f804f9e41e23f5f5fb9efd06cf6a313b3d5031bb87bd0", size = 20919 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e2/1e/3b23b580762cca7456427731de9b90718d15eec02ebe096437469d767dfe/django_health_check-3.18.3-py2.py3-none-any.whl", hash = "sha256:f5f58762b80bdf7b12fad724761993d6e83540f97e2c95c42978f187e452fa07", size = 30331 },
+]
+
+[[package]]
 name = "django-htmx"
 version = "1.21.0"
 source = { registry = "https://pypi.org/simple" }
@@ -355,6 +367,7 @@ dependencies = [
     { name = "django" },
     { name = "django-createsuperuserwithpassword" },
     { name = "django-extensions" },
+    { name = "django-health-check" },
     { name = "django-htmx" },
     { name = "djp" },
     { name = "python-dotenv" },
@@ -377,6 +390,7 @@ requires-dist = [
     { name = "django", specifier = ">=5.1.2" },
     { name = "django-createsuperuserwithpassword", specifier = ">=2.0.0" },
     { name = "django-extensions", specifier = ">=3.2.3" },
+    { name = "django-health-check", specifier = ">=3.18.3" },
     { name = "django-htmx", specifier = ">=1.19.0" },
     { name = "djp", git = "https://github.com/andrewcole/djp" },
     { name = "python-dotenv", specifier = ">=1.0.1" },

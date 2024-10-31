@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "django_htmx",
+    "health_check",
     "illallangi.django.data",
 ]
 
