@@ -1,4 +1,3 @@
-import secrets
 from os import environ
 from pathlib import Path
 from warnings import filterwarnings
@@ -19,7 +18,7 @@ filterwarnings(
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = secrets.token_urlsafe(64)
+SECRET_KEY = environ.get("DJANGO_SECRET_KEY")
 
 DEBUG = True
 
