@@ -40,7 +40,7 @@ build: lint
 
 .PHONY: image
 image: build
-	@podman build --format=docker --tag illallangi-data:latest .
+	@podman build --format=docker --tag $$DEV_REGISTRY/django-data:latest .
 
 .PHONY: runimage
 runimage: image
@@ -59,7 +59,11 @@ runimage: image
 		-v $${HOME}/.config:/config/.cache:rw \
 		--env-file $$(uv run python -c "from dotenv import find_dotenv; print(find_dotenv())") \
 		-p 58000:58000 \
-		illallangi-data:latest
+		$$DEV_REGISTRY/django-data:latest
+	
+.PHONY: pushimage
+pushimage: image
+	@podman push $$DEV_REGISTRY/django-data:latest
 
 .PHONY: check
 check: lint
