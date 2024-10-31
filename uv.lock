@@ -347,8 +347,8 @@ wheels = [
 ]
 
 [[package]]
-name = "illallangi-data"
-version = "0.0.0"
+name = "illallangi-django-data"
+version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "dj-database-url" },
