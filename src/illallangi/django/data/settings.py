@@ -22,7 +22,37 @@ SECRET_KEY = environ.get("DJANGO_SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    host
+    for host in [
+        *environ.get("DATA_HOST", "").split(","),
+        *[
+            "localhost",
+            "127.0.0.1",
+        ],
+    ]
+    if host
+]
+
+CORS_ORIGIN_WHITELIST = [
+    url
+    for host in [
+        host
+        for host in [
+            *environ.get("DATA_HOST", "").split(","),
+            *[
+                "localhost",
+                "127.0.0.1",
+            ],
+        ]
+        if host
+    ]
+    for url in [
+        f"http://{host}:[{environ.get('DATA_PORT', 8034)}]",
+        f"http://{host}",
+        f"https://{host}",
+    ]
+]
 
 INSTALLED_APPS = [
     "django_createsuperuserwithpassword",

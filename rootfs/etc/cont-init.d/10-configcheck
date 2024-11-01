@@ -25,6 +25,12 @@ if [ ! -d "${XDG_CONFIG_HOME}" ]; then
     mkdir -p "${XDG_CONFIG_HOME}"
 fi
 
+# Check if DATA_HOST is set and die if not
+if [ -z "${DATA_HOST}" ]; then
+    echo "DATA_HOST is not set. Exiting."
+    exit 1
+fi
+
 # Check if DATA_PORT is set and die if not
 if [ -z "${DATA_PORT}" ]; then
     echo "DATA_PORT is not set. Exiting."
